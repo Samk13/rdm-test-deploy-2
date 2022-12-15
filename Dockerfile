@@ -22,8 +22,6 @@ COPY ./ .
 RUN cp -r ./static/. ${INVENIO_INSTANCE_PATH}/static/ && \
     cp -r ./assets/. ${INVENIO_INSTANCE_PATH}/assets/ && \
     invenio collect --verbose  && \
-    invenio webpack create && \
-    invenio webpack install --unsafe && \
-    invenio webpack build
+    invenio webpack buildall
 
 ENTRYPOINT [ "bash", "-c"]
